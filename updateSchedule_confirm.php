@@ -13,8 +13,6 @@
     
     // Declare variables
     $day = $_POST['day'];
-    // $stime = $_POST['stime'];
-    // $etime = $_POST['etime'];
     $classcode = $_POST['classcode'];
     $Labname = $_POST['LabName'];
     $course = $_POST['course'];
@@ -48,7 +46,7 @@
 
         if ($updateQuery) {
             echo "Record updated successfully.";
-            header("location:scheduleList.php");
+            header("location: check_labs.php");
         } else {
             echo "Error updating record: " . mysqli_error($conn);
         }
