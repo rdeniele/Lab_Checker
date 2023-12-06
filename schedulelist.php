@@ -69,6 +69,20 @@ $result = mysqli_stmt_get_result($stmt);
 <td><?php echo $r['Teacher'];?></td>
 <td><?php echo $r['Capacity'];?></td>
 
+  <td>
+                <?php
+                // Check if the schedule has expired
+                $currentDate = date('Y-m-d');
+                $endDate = $r['EndDate'];
+
+                if ($endDate < $currentDate) {
+                    echo 'VACANT';
+                } else {
+                    echo $r['Description'];
+                }
+                ?>
+            </td>
+
             <!-- <td>
                 <a href="deleteSchedule.php?id=<?php echo $r['ID'];?>">
                     Delete
