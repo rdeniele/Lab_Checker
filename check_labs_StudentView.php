@@ -26,7 +26,7 @@ $q=mysqli_query($conn,$sql)or die(mysqli_error($conn));
 
 <img src="images.png" alt="">
     <!-- search bar -->
-    <form method="post" action="ClassList.php">
+    <!-- <form method="post" action="ClassList.php">
         <h4>Search:</h4>
         <select name="field">
                 <option value="Name">Lab Name</option>
@@ -35,7 +35,7 @@ $q=mysqli_query($conn,$sql)or die(mysqli_error($conn));
                 
             <input type="text" name="val">
             <input type="submit" name="search" value="Search">
-    </form>
+    </form> -->
 <!-- tables -->
     <table border=1>
         <tr>
