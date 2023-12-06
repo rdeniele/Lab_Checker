@@ -14,9 +14,20 @@ $conn=mysqli_connect("localhost","root","","csl_db")or die (mysqli_error($conn))
 $q=mysqli_query($conn,$sql)or die(mysqli_error($conn));
 ?>
 
-<!-- search bar -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="checklabS.css">
+</head>
+<body>
+
+<img src="images.png" alt="">
+    <!-- search bar -->
     <form method="post" action="ClassList.php">
-        Search:
+        <h4>Search:</h4>
         <select name="field">
                 <option value="Name">Lab Name</option>
                 <option value="Capacity">Capacity</option>
@@ -89,3 +100,6 @@ $q=mysqli_query($conn,$sql)or die(mysqli_error($conn));
 
 <?php
 ?>
+    
+</body>
+</html>

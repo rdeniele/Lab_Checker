@@ -12,8 +12,14 @@ $r=mysqli_fetch_assoc($q);
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Update Laboratory</title>
+    <link rel="stylesheet" href="updatelab.css">
+
 </head>
 <body>
+
+
+
+<div class="container1">
     <h1>UPDATE <?php echo $r['LabName'];?></h1>
     <form name="form1" method="post" action="updateLab_confirm.php?id=<?php echo $r['ID'];?>">
         <!-- lab name-->
@@ -27,6 +33,7 @@ $r=mysqli_fetch_assoc($q);
         <input type="text" name="desc" value="<?php echo $r['Description']; ?>"><br>
         <!-- submit button -->
         <button type="add" id="update_button" name="add">Update</button> 
+
+        </div>
 </body>
-<button type="button" id="homebutton" onclick="window.location.href = 'check_labs.php';">BACK</button> 
 </html>

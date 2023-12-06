@@ -12,6 +12,9 @@ $r=mysqli_fetch_assoc($q);
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Add Schedule</title>
+    <link rel="stylesheet" href="addSchedule.css">
+
+
 </head>
 <body>
     <h1>ADD SCHEDULE FOR <?php echo $r['LabName'];?></h1>
@@ -28,13 +31,6 @@ $r=mysqli_fetch_assoc($q);
                     <option value="Saturday">Saturday</option>
                     <option value="Sunday">Sunday</option>
                     </select></br>
-
-         <!-- start date -->
-         <label for="sdate">Start Date: </label>
-        <input type="date" name="sdate" value=""><br>            
-         <!-- end date -->
-         <label for="edate">End Date: </label>
-        <input type="date" name="edate" value=""><br>            
         <!-- start time -->
         <label for="stime">Start Time: </label>
         <input type="time" name="stime" value=""><br>
@@ -70,6 +66,7 @@ $r=mysqli_fetch_assoc($q);
             </select></br>
         <!-- submit button -->
         <button type="add" id="addbutton" name="add">Add</button> 
-        <button type="button" id="homebutton" onclick="window.location.href = 'check_labs.php';">BACK</button> 
 </body>
 </html>
+
+

@@ -2,17 +2,11 @@
     // Connect to the database
     $conn = mysqli_connect("localhost", "root", "", "csl_db") or die(mysqli_error($conn));
 
-    //ID for fetching schedules
     $ID = $_GET['id'];
-   
-    $sql = "SELECT * FROM tblcsl WHERE ID= $ID";
-
-    $q = mysqli_query($conn, $sql) or die(mysqli_error($conn));
-    $r = mysqli_fetch_assoc($q);
-
-    
     // Declare variables
     $day = $_POST['day'];
+    $stime = $_POST['stime'];
+    $etime = $_POST['etime'];
     $classcode = $_POST['classcode'];
     $Labname = $_POST['LabName'];
     $course = $_POST['course'];
@@ -46,7 +40,7 @@
 
         if ($updateQuery) {
             echo "Record updated successfully.";
-            header("location: check_labs.php");
+            header("location:scheduleList.php");
         } else {
             echo "Error updating record: " . mysqli_error($conn);
         }
@@ -56,6 +50,5 @@
 
     // Close the database connection
     mysqli_close($conn);
-    
-    header("location: check_labs.php")
+    header("location: check_labs.php");
 ?>

@@ -1,0 +1,135 @@
+@import url('https://fonts.googleapis.com/css2?family=Advent+Pro:wght@100&family=Open+Sans:wght@300&display=swap');
+
+
+
+  @import url('https://fonts.googleapis.com/css2?family=Roboto:wght@100&display=swap');
+
+
+
+
+
+*{
+    padding: 0;
+    margin: 0;
+    overflow: hidden;
+}
+
+
+body{
+    background-image:url('lasalle.jpg') ;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+.container{
+    
+    width: 30%;
+    min-height: 500px;
+    margin: 0 auto;
+    margin-top:100px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-image: url('downlaoad.jpg');
+    background-repeat: no-repeat;
+    background-size: cover;
+    flex-direction: column;
+    float: right;
+    margin-right: 50px;
+    border-style: solid;
+    border-color: white;
+    border-radius: 30px;
+    
+    
+}
+
+
+.Menuh1{
+    margin-top:30px;
+  font-family: 'Open Sans', sans-serif;
+  color: white;
+  margin-bottom: 50px;
+
+}
+
+button{
+    margin-top: 40px;
+    padding:10px 10px;
+    margin: 10px;
+  font-family: 'Open Sans', sans-serif;
+  border-radius: 10px;
+  outline: none;
+  text-decoration: none;
+  cursor: pointer;
+  transition: background-color 0.5s ease;
+
+
+}
+button:hover{
+background-color: rgb(26, 168, 26);
+color: white    ;
+animation: MoveIt 0.5s ease forwards;
+}
+
+.box{
+
+    
+}
+
+.container1{
+    position: absolute;
+    width: 50%;
+    top: 100px;
+    min-height: 500px;
+    margin-left: 50px;
+   
+    
+}
+
+.container1 h1{
+    text-align: center;
+    margin-top: 30px;
+    font-family: 'Advent Pro', sans-serif;
+font-family: 'Open Sans', sans-serif;
+color: rgb(255, 255, 255);
+font-size: 50px;
+animation: LaSalle 0.5s ease forwards;
+
+}
+
+@keyframes LaSalle {
+
+    from{
+        transform: translateX(-200px);
+        opacity: 0.1;
+    }
+
+    to{
+        transform: translateX(0px);
+        opacity: 1;
+    }
+    
+}
+
+@keyframes MoveIt {
+    from{
+        transform: translateX(0px);
+    }
+    to{
+        transform: translateY(-5px);
+    }
+    
+}
+
+img{
+    margin-right: 50px;
+    width: 700px;
+    animation: LaSalle 1s ease forwards;
+    
+}
+.boxanim{
+    position: absolute;
+    top: 0;
+    margin-top: 50px;
+}
+
+

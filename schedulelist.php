@@ -17,11 +17,21 @@ mysqli_stmt_execute($stmt);
 $result = mysqli_stmt_get_result($stmt);
 ?>
 
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="check_labs.css">
+    
+</head>
+<body>
 <h1><?php echo $r['LabName']?> Schedules</h1>
 <!-- tables -->
-<table border=1>
+<table border="1">
     <tr>
-        <!-- <td>ID </td> -->
+        <!-- Your header cells go here -->
         <td>Day </td>
         <td>Start Date </td>
         <td>End Date </td>
@@ -38,42 +48,32 @@ $result = mysqli_stmt_get_result($stmt);
     </tr>
 
     <?php
-    //use the names in the database
+    $rowCounter = 0;
+
     while ($r = mysqli_fetch_assoc($result)) {
+        // Output the table row
         ?>
         <tr>
+            <!-- Your existing code for table cells goes here -->
             <!-- <td><?php echo $r['ID'];?></td> -->
-            <td><?php echo $r['Day'];?></td>
-            <td><?php echo $r['StartDate'];?></td>
-            <td><?php echo $r['EndDate'];?></td>
-            <td><?php echo $r['StartTime'];?></td>
-            <td><?php echo $r['EndTime'];?></td>
-            <td><?php echo $r['ClassID'];?></td>
-            <td><?php echo $r['cslLab'];?></td>
-            <td><?php echo $r['Course'];?></td>
-            <td><?php echo $r['Year'];?></td>
-            <td><?php echo $r['Sec'];?></td>
-            <td><?php echo $r['Teacher'];?></td>
-            <td><?php echo $r['Capacity'];?></td>
-            <td>
-                <?php
-                // Check if the schedule has expired
-                $currentDate = date('Y-m-d');
-                $endDate = $r['EndDate'];
+<td><?php echo $r['Day'];?></td>
+<td><?php echo $r['StartDate'];?></td>
+<td><?php echo $r['EndDate'];?></td>
+<td><?php echo $r['StartTime'];?></td>
+<td><?php echo $r['EndTime'];?></td>
+<td><?php echo $r['ClassID'];?></td>
+<td><?php echo $r['cslLab'];?></td>
+<td><?php echo $r['Course'];?></td>
+<td><?php echo $r['Year'];?></td>
+<td><?php echo $r['Sec'];?></td>
+<td><?php echo $r['Teacher'];?></td>
+<td><?php echo $r['Capacity'];?></td>
 
-                if ($endDate < $currentDate) {
-                    echo 'VACANT';
-                } else {
-                    echo $r['Description'];
-                }
-                ?>
-            </td>
-
-            <td>
+            <!-- <td>
                 <a href="deleteSchedule.php?id=<?php echo $r['ID'];?>">
                     Delete
                 </a>
-            </td>
+            </td> -->
 
             <td>
                 <a href="updateSchedule.php?id=<?php echo $r['ID'];?>">
@@ -81,7 +81,19 @@ $result = mysqli_stmt_get_result($stmt);
                 </a>
             </td>
         </tr>
+
         <?php
+        $rowCounter++;
+
+        // Check if the counter is a multiple of 13
+        if ($rowCounter % 13 == 0) {
+            // Insert a new row with a single cell spanning all columns to create a line break
+            ?>
+            <tr>
+                <td colspan="13"><br></td>
+            </tr>
+            <?php
+        }
     }
     ?>
 </table>
@@ -93,3 +105,6 @@ $result = mysqli_stmt_get_result($stmt);
 
 <?php
 ?>
+    
+</body>
+</html>

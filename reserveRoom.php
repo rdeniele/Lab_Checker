@@ -12,9 +12,14 @@ $r=mysqli_fetch_assoc($q);
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Reserve Room</title>
+    <link rel="stylesheet" href="reserveroom.css">
+    
 </head>
 <body>
     <h1> Reserve Room </h1>
+    <div class="container1">
+
+    <div>
     <form name="form1" method="post" action="reserveRoom_confirm.php?id=<?php echo $r['ID'];?>">
         
         <!-- class ID -->
@@ -45,5 +50,7 @@ $r=mysqli_fetch_assoc($q);
         <!-- Confirm button inside the body -->
         <button type="submit" id="addbutton" name="add">Confirm</button> 
 </form>
+</div>
+</div>
 </body>
 </html>

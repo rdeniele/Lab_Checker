@@ -1,7 +1,7 @@
 <?php
 $conn=mysqli_connect("localhost","root","","csl_db")or die (mysqli_error($conn));
 $id=$_GET['id'];
-$sql="SELECT * FROM tblschedule WHERE ID=".$id;
+$sql="select * from tblschedule where ID=".$id;
 $q=mysqli_query($conn,$sql)or die (mysqli_error($conn));
 $r=mysqli_fetch_assoc($q);
 
@@ -13,9 +13,14 @@ $r=mysqli_fetch_assoc($q);
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Update Schedule</title>
+    <link rel="stylesheet" href="updatesched.css">
+
 </head>
 <body>
-    <h1>UPDATE SCHEDULE</h1>
+<h1>UPDATE SCHEDULE</h1>
+
+
+<div class="container1">
     <form name="form1" method="post" action="updateSchedule_confirm.php?id=<?php echo $r['ID']; ?>">
 
     
@@ -30,7 +35,12 @@ $r=mysqli_fetch_assoc($q);
                     <option value="Saturday">Saturday</option>
                     <option value="Sunday">Sunday</option>
                     </select></br>
-       
+        <!-- start time -->
+        <label for="stime">Start Time: </label>
+        <input type="time" name="stime" value="<?php echo $r['StartTime']; ?>"><br>
+        <!-- end time -->
+        <label for="etime">End Time: </label>
+        <input type="time" name="etime" value="<?php echo $r['EndTime']; ?>"><br>
         <!-- class ID -->
         <label for="classcode">Class Code: </label>
         <input type="text" name="classcode" value="<?php echo $r['ClassID']; ?>"><br>
@@ -60,5 +70,6 @@ $r=mysqli_fetch_assoc($q);
             </select></br>
         <!-- submit button -->
         <button type="add" id="addbutton" name="add">Confirm</button> 
+        </div>
 </body>
 </html>
